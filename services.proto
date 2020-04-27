@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/skipio-corp/gr/service";
+
+service ContactService {
+  rpc UpsertContacts(stream Contact) returns (UpsertContactsResponse) {}
+}
+
+message Contact {
+  string firstName = 1;
+  string lastName = 2;
+  string mobilePhone = 3;
+  string email = 4;
+}
+
+message UpsertContactsResponse {
+}
